@@ -125,7 +125,7 @@ eventos = [{'id': 900, 'name': "EVENTS", 'file_name': "info.svg", 'description':
 {'id': 992, 'name': "RECORD_POI", 'file_name': "poi_add.svg", 'description': "Guardar PDI"},
 {'id': 993, 'name': "DRIVING_HOURS_CONTROL", 'file_name': "watch.svg", 'description': "Control de horas de conducción"},
 {'id': 994, 'name': "DRIVING_HOURS_CONTROL_DESCANSO_SEMANAL_MENOR_24", 'file_name': "watch.svg", 'description': "Descanso semanal menor que 24h."},
-{'id': 995, 'name': "DRIVING_HOURS_CONTROL_DESCANSO_SEMANAL_REDUCIDO_NO_PERMITIDO", 'file_name': "watch.svg"},
+{'id': 995, 'name': "DRIVING_HOURS_CONTROL_DESCANSO_SEMANAL_REDUCIDO_NO_PERMITIDO", 'file_name': "watch.svg", 'description': "Descanso semanal reducido no permitido"},
 {'id': 996, 'name': "DRIVING_HOURS_CONTROL_DESCANSO_SEMANAL_NO_COMPESA_DESCANSO_REDUCIDO", 'file_name': "watch.svg", 'description': "Descanso semanal no compensa el reducido"},
 {'id': 997, 'name': "DRIVING_HOURS_CONTROL_DESCANSO_DIARIO_REDUCIDO_INCORRECTO", 'file_name': "watch.svg", 'description': "Descanso reducido diario incorrecto"},
 {'id': 998, 'name': "DRIVING_HOURS_CONTROL_NO_HAY_DESCANSO_SEMANAL_O_DIARIO_EN_24", 'file_name': "watch.svg", 'description': "Sin descanso semanal o diario en 24h."},
@@ -223,11 +223,19 @@ def get_event(fileName):
 print "Start process"
 #print eventos[10]['id']
 
+for evento in eventos:
+    svg = leer_svg("./events/"+evento['file_name'])
+    print str(evento['id']) + " - " + str(evento['name'])
+    new_icon(1, evento['id'], evento['name'], evento['description'], evento['file_name'], svg)
+
+'''
 for file_name in listdir("./events"):
     svg = leer_svg("./events/"+file_name)
     evento = get_event(file_name)
-    #print evento
     if (evento!=None):
+        print str(evento['id']) + " - " + str(evento['name'])
         new_icon(1, evento['id'], evento['name'], evento['description'], file_name, svg)
-
+    else:
+        print "--->" + str(file_name)
+'''
 print "Done!"
