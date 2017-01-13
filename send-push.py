@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 #-*- coding: UTF-8 -*-
 
-from resources import mongo
+import mongo
 
 import json
 import requests
@@ -145,7 +145,9 @@ usernames = ['crueda']
 
 URL = 'https://fcm.googleapis.com/fcm/send'
 HEADERS = {}
-HEADERS ['Authorization'] = 'key=AIzaSyCJ96vetDlCHW-m1jSeS6WxyUjH6Tb6dzE'
+#HEADERS ['Authorization'] = 'key=AIzaSyCJ96vetDlCHW-m1jSeS6WxyUjH6Tb6dzE'
+HEADERS ['Authorization'] = 'key=AIzaSyAaOFtcF0LRTHX4nt1xnOxWFwCcSsYNajo'
+
 HEADERS ['Content-Type'] = 'application/json'
 
 def convertTimestamp(timestamp):
