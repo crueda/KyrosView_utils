@@ -138,7 +138,6 @@ event_list = {
   1054: "Cierre de puerta trasera",
   1055: "Inhibidor GPS"}
 
-
 mongoClient = mongo.getMongoDBConnection()
 
 usernames = ['crueda']
