@@ -8,6 +8,7 @@ MONGODB_PORT = '27017'
 MONGODB_TIMEOUT = 1000
 MONGODB_DATABASE = 'demos'
 
+
 URI_CONNECTION = "mongodb://" + MONGODB_HOST + ":" + MONGODB_PORT + "/"
 
 try:
